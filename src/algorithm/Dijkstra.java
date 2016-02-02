@@ -1,16 +1,22 @@
 package algorithm;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+
+import graph.Graph;
+import graph.Edge;
+import graph.Node;
 
 public class Dijkstra {
-	private String starting;
-	private ArrayList<Boolean> k;
-	private ArrayList<Integer> dv;
-	private ArrayList<String> nodes;
-	private ArrayList<String> prev;
+	private final List<Node> nodes;
+	private final List<Edge> edges;
 	
-	public Dijkstra(HashMap<String, HashMap<String, Integer>> h, String starting) {
+	public Dijkstra(Graph graph) {
+		this.nodes = new ArrayList<Node>(graph.getNodes());
+		this.edges = new ArrayList<Edge>(graph.getEdges());
+	}
+	
+	public void findMin() {
 		
 	}
 }
