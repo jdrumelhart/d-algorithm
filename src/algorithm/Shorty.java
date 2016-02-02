@@ -2,7 +2,7 @@ package algorithm;
 
 import java.util.ArrayList;
 
-public interface NeedNext {
+public interface Shorty {
 	public static ArrayList<String> next(String i, String g, Dijkstra d) {
 		return null;
 	}
