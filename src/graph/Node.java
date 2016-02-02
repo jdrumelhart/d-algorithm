@@ -2,16 +2,10 @@ package graph;
 
 public class Node {
 	
-	private String id;
 	private String name;
 	
-	public Node(String identification, String name) {
-		this.id = identification;
+	public Node(String name) {
 		this.name = name;
-	}
-	
-	public String getID() {
-		return this.id;
 	}
 	
 	public String getName() {
