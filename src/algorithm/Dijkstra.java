@@ -16,5 +16,7 @@ public class Dijkstra {
 	public Dijkstra(HashMap<String, HashMap<String, Integer>> map, String name) {
 		nodes = new ArrayList<String>(map.keySet());
 		dist = new ArrayList<HashMap<String, Integer>>(map.values());
+		prev = new ArrayList<String>();
+		visited = new ArrayList<Boolean>();
 	}
 }
