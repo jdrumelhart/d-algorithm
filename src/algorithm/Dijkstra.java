@@ -37,12 +37,14 @@ public class Dijkstra implements Shorty {
 	public void updateNodes() {
 		
 	}
+	
 	private void updateUnselected() {
 		HashMap<String, Integer> surroundingNodes = map.get(currentNode);
 		for(int i = 0; i < surroundingNodes.size(); i++) {
 			
 		}
 	}
+	
 	/**
 	 * Finds the node that is closest to the current node.
 	 * 
