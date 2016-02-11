@@ -10,7 +10,7 @@ public class Dijkstra implements Shorty {
 	public HashMap<String, String> path;
 	public String currentNode;
 	public HashMap<String, Boolean> visited;
-	public ArrayList<HashMap<String, Integer>> dist;
+//	public ArrayList<HashMap<String, Integer>> dist;
 	public ArrayList<String> prev;
 	public ArrayList<String> nodes;
 	public ArrayList<String> surroundingNodes;
@@ -23,19 +23,13 @@ public class Dijkstra implements Shorty {
 		//the list of all nodes in the graph
 		nodes = new ArrayList<String>(map.keySet());
 		
-		dist = new ArrayList<HashMap<String, Integer>>(map.values());
+//		dist = new ArrayList<HashMap<String, Integer>>(map.values());
 		path = new HashMap<String, String>();
 		prev = new ArrayList<String>();
 		visited = new HashMap<String, Boolean>();
 		this.startNode = startNode;
 		currentNode = startNode;
 		visited.put(startNode, true);
-	}
-
-	@Override
-	public ArrayList<String> next(String destination, Dijkstra d) {
-		String start = d.getStart();
-		return null;
 	}
 	
 	public void updateNodes() {
@@ -48,7 +42,14 @@ public class Dijkstra implements Shorty {
 		}
 	}
 	
-	public String calcMinDist() {
+	private void updateUnselected() {
+		HashMap<String, Integer> surroundingNodes = map.get(currentNode);
+		for(int i = 0; i < surroundingNodes.size(); i++) {
+			
+		}
+	}
+	
+	private String calcMinDist() {
 		
 		//The nodes surrounding the current one
 		Set<String> surroundingNodes = map.get(currentNode).keySet();
