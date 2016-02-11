@@ -34,6 +34,15 @@ public class Dijkstra implements Shorty {
 		distanceFromStart = new HashMap<String, Integer>();
 	}
 	
+	private void init() {
+		for(int i = 0; i < map.size(); i++) {
+			visited.put(nodes.get(i), false);
+		}
+		visited.put(startNode, true);
+		
+		
+	}
+	
 	public void updateNodes() {
 		
 	}
