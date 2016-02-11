@@ -16,6 +16,7 @@ public class Dijkstra implements Shorty {
 	public ArrayList<String> surroundingNodes;
 	public HashMap<String, HashMap<String, Integer>> map;
 	private String startNode;
+	private HashMap<String, Integer> distanceFromStart;
 
 	public Dijkstra(HashMap<String, HashMap<String, Integer>> map, String startNode) {
 		this.map = map;
@@ -30,6 +31,7 @@ public class Dijkstra implements Shorty {
 		this.startNode = startNode;
 		currentNode = startNode;
 		visited.put(startNode, true);
+		distanceFromStart = new HashMap<String, Integer>();
 	}
 
 	@Override
@@ -39,15 +41,14 @@ public class Dijkstra implements Shorty {
 	}
 	
 	public void updateNodes() {
-		//finds distances
-		for(String node : nodes) {
-			//Finds the surrounding nodes of the current one
-			if(map.get(currentNode).get(node) > 0 && !node.equals(currentNode)) {
-				
-			}
-		}
+		
 	}
 	
+	/**
+	 * Finds the node that is closest to the current node.
+	 * 
+	 * @return the closest node to the previous node.
+	 */
 	public String calcMinDist() {
 		
 		//The nodes surrounding the current one
@@ -60,6 +61,7 @@ public class Dijkstra implements Shorty {
 		
 		//cycles through and finds the closest node
 		for(String node : surroundingNodes) {
+			//if this node's distance is less than the known minimum, make it the min.
 			if(map.get(currentNode).get(node) < minDist) {
 				minDist = map.get(currentNode).get(node);
 				closest = node;
@@ -68,6 +70,8 @@ public class Dijkstra implements Shorty {
 		
 		return closest;
 	}
+	
+	
 	
 	public String getStart() {
 		return startNode;
