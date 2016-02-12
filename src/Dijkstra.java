@@ -13,18 +13,23 @@ public class Dijkstra {
 	public Dijkstra(HashMap<String, HashMap<String, Integer>> map, String startNode) {
 		path = new HashMap<String,String>();
 		vertices = new HashMap<String,Vertex>();
+		//Places all of the strings from the map into Vertex form
 		for(String s:map.keySet()) {
 			vertices.put(s,new Vertex(s));
 		}
 		ArrayList<Vertex> x = new ArrayList(vertices.entrySet());
 		g = new Graph(x);
+		//Adds all of the edges into the graph
 		for(String origin:map.keySet()) {
 			for(String dest:map.get(origin).keySet()) {
 				g.addEdge(vertices.get(origin), vertices.get(dest), map.get(origin).get(dest));
 			}
 		}
+		
+		//Calls the calculate method to determine shortest path
 		calculate(vertices.get(startNode));
 		
+		//Places the shortest path into the HashMap path
 		Vertex v = g.getVertex(g.getVertices().size() - 1);
 		for(int i = v.path.size(); i > 0; i--) {
 			path.put(v.path.get(i).name, v.path.get(i-1).name);
@@ -63,6 +68,10 @@ public class Dijkstra {
 //
 //	}
 
+	/**
+	 * Calculates the shortest path from the given vertex to all other nodes
+	 * @param source The first vertex
+	 */
 	public void calculate(Vertex source){
 		// 1. Take the unvisited node with minimum weight.
 		// 2. Visit all its neighbors.
