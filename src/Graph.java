@@ -9,6 +9,10 @@ public class Graph {
 			vertices.add(new Vertex("Vertex " + Integer.toString(i)));
 		}
 	}
+	
+	public Graph(ArrayList<Vertex> vertices) {
+		this.vertices = vertices;
+	}
 
 	public void addEdge(int src, int dest, int weight) {
 		Vertex s = vertices.get(src);
