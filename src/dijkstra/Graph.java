@@ -4,13 +4,6 @@ import java.util.ArrayList;
 public class Graph {
 	private ArrayList<Vertex> vertices;
 
-//	public Graph(int numberVertices) {
-//		vertices = new ArrayList<Vertex>(numberVertices);
-//		for (int i = 0; i < numberVertices; i++) {
-//			vertices.add(new Vertex("Vertex " + Integer.toString(i)));
-//		}
-//	}
-	
 	public Graph(ArrayList<Vertex> vertices) {
 		this.vertices = vertices;
 	}
