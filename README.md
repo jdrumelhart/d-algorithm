@@ -11,5 +11,3 @@ this may appear confusing at first, what is happening is that a string, represen
 Overview:
 
 Challenges:
-
-Acknowledgements:
