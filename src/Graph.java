@@ -24,6 +24,8 @@ public class Graph {
 			d = dest;
 		}
 		Edge new_edge = new Edge(s, d, weight);
+		//Key line
+		//Allows the rest of the graph to function
 		s.neighbors.add(new_edge);
 	}
 
