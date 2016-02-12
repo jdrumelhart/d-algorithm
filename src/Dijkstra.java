@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Dijkstra {
 
 	public HashMap<String,String> path;
-	public HashMap<String,Vertex>vertices;
+	public HashMap<String,Vertex> vertices;
 	
 	Graph g;
 	
