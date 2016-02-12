@@ -3,20 +3,27 @@ import java.util.ArrayList;
 public class Graph {
 	private ArrayList<Vertex> vertices;
 
-	public Graph(int numberVertices) {
-		vertices = new ArrayList<Vertex>(numberVertices);
-		for (int i = 0; i < numberVertices; i++) {
-			vertices.add(new Vertex("Vertex " + Integer.toString(i)));
-		}
-	}
+//	public Graph(int numberVertices) {
+//		vertices = new ArrayList<Vertex>(numberVertices);
+//		for (int i = 0; i < numberVertices; i++) {
+//			vertices.add(new Vertex("Vertex " + Integer.toString(i)));
+//		}
+//	}
 	
 	public Graph(ArrayList<Vertex> vertices) {
 		this.vertices = vertices;
 	}
 
-	public void addEdge(int src, int dest, int weight) {
-		Vertex s = vertices.get(src);
-		Edge new_edge = new Edge(vertices.get(dest), weight);
+	public void addEdge(Vertex src, Vertex dest, int weight) {
+		Vertex s = null;
+		Vertex d = null;
+		if(vertices.contains(src)) {
+			s = src;
+		}
+		if(vertices.contains(dest)) {
+			d = dest;
+		}
+		Edge new_edge = new Edge(s, d, weight);
 		s.neighbors.add(new_edge);
 	}
 

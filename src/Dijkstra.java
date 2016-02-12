@@ -6,16 +6,22 @@ import java.util.HashMap;
 public class Dijkstra{
 
 	public HashMap<String,String> path;
-	public ArrayList<Vertex> vertices;
+	public HashMap<String,Vertex>vertices;
 	
 	Graph g;
 	
 	public Dijkstra(HashMap<String, HashMap<String, Integer>> map, String startNode) {
 		path = new HashMap<String,String>();
 		for(String s:map.keySet()) {
-			vertices.add(new Vertex(s));
+			vertices.put(s,new Vertex(s));
 		}
-		g = new Graph(vertices);
+		ArrayList<Vertex> x = new ArrayList(vertices.entrySet());
+		g = new Graph(x);
+		for(String origin:map.keySet()) {
+			for(String dest:map.get(origin).keySet()) {
+				g.addEdge(vertices.get(origin), vertices.get(dest), map.get(origin).get(dest));
+			}
+		}
 	}
 	
 //  public static void main(String[] arg){
