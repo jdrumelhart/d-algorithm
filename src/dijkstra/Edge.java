@@ -1,3 +1,4 @@
+package dijkstra;
 public class Edge {
 	public final Vertex target;
 	public final Vertex origin;
