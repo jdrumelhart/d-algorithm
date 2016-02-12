@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.Objects;
 
 public interface Shorty {
 	public static ArrayList<String> Next(String name, Dijkstra d) {

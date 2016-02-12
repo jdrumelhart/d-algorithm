@@ -23,6 +23,8 @@ public class Dijkstra {
 			}
 		}
 		calculate(vertices.get(startNode));
+		
+		
 	}
 	
 //  public static void main(String[] arg){
