@@ -12,6 +12,7 @@ public class Dijkstra {
 	
 	public Dijkstra(HashMap<String, HashMap<String, Integer>> map, String startNode) {
 		path = new HashMap<String,String>();
+		vertices = new HashMap<String,Vertex>();
 		for(String s:map.keySet()) {
 			vertices.put(s,new Vertex(s));
 		}
@@ -24,7 +25,7 @@ public class Dijkstra {
 		}
 		calculate(vertices.get(startNode));
 		
-		Vertex v = g.getVertices().get(g.getVertices().size() - 1);
+		Vertex v = g.getVertex(g.getVertices().size() - 1);
 		for(int i = v.path.size(); i > 0; i--) {
 			path.put(v.path.get(i).name, v.path.get(i-1).name);
 		}

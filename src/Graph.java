@@ -17,12 +17,8 @@ public class Graph {
 	public void addEdge(Vertex src, Vertex dest, int weight) {
 		Vertex s = null;
 		Vertex d = null;
-		if(vertices.contains(src)) {
-			s = src;
-		}
-		if(vertices.contains(dest)) {
-			d = dest;
-		}
+		s = src;
+		d = dest;
 		Edge new_edge = new Edge(s, d, weight);
 		//Key line
 		//Allows the rest of the graph to function
@@ -33,7 +29,7 @@ public class Graph {
 		return vertices;
 	}
 
-	public Vertex getVertex(int vert) {
+	public synchronized Vertex getVertex(int vert) {
 		return vertices.get(vert);
 	}
 }
