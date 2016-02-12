@@ -3,7 +3,7 @@ import java.util.PriorityQueue;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Dijkstra implements Shorty {
+public class Dijkstra {
 
 	public HashMap<String,String> path;
 	public HashMap<String,Vertex>vertices;
@@ -22,6 +22,7 @@ public class Dijkstra implements Shorty {
 				g.addEdge(vertices.get(origin), vertices.get(dest), map.get(origin).get(dest));
 			}
 		}
+		calculate(vertices.get(startNode));
 	}
 	
 //  public static void main(String[] arg){
@@ -88,11 +89,4 @@ public class Dijkstra implements Shorty {
 			}
 		}
 	}
-
-@Override
-public ArrayList Next(int name, Dijkstra d) {
-	
-	
-}
-
 }
