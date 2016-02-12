@@ -24,7 +24,10 @@ public class Dijkstra {
 		}
 		calculate(vertices.get(startNode));
 		
-		
+		Vertex v = g.getVertices().get(g.getVertices().size() - 1);
+		for(int i = v.path.size(); i > 0; i--) {
+			path.put(v.path.get(i).name, v.path.get(i-1).name);
+		}
 	}
 	
 //  public static void main(String[] arg){
