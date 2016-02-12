@@ -17,6 +17,10 @@ public class Vertex implements Comparable<Vertex> {
 		neighbors = new ArrayList<Edge>();
 		path = new LinkedList<Vertex>();
 	}
+	
+	public void addPrev(Vertex v) {
+		previous = v;
+	}
 
 	@Override
 	public String toString() {
