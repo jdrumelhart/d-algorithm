@@ -3,7 +3,7 @@ import java.util.PriorityQueue;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Dijkstra{
+public class Dijkstra implements Shorty {
 
 	public HashMap<String,String> path;
 	public ArrayList<Vertex> vertices;
@@ -82,5 +82,11 @@ public class Dijkstra{
 			}
 		}
 	}
+
+@Override
+public ArrayList Next(int name, Dijkstra d) {
+	
+	
+}
 
 }
