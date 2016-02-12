@@ -3,8 +3,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Vertex implements Comparable<Vertex> {
+	
+	//The name of this vertex
 	public final String name;
+	
+	//The surrounding vertices
 	public ArrayList<Edge> neighbors;
+	
 	public LinkedList<Vertex> path;
 	public double minDistance = Double.POSITIVE_INFINITY;
 	public Vertex previous;
