@@ -1,3 +1,4 @@
+package dijkstra;
 import java.util.ArrayList;
 
 public class Graph {
@@ -29,7 +30,7 @@ public class Graph {
 		return vertices;
 	}
 
-	public synchronized Vertex getVertex(int vert) {
+	public Vertex getVertex(int vert) {
 		return vertices.get(vert);
 	}
 }
