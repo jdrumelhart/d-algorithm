@@ -6,6 +6,20 @@ import java.util.HashMap;
 
 public class Dijkstra {
 
+	/**
+	 * Representation Invariant
+	 * 
+	 * The String in the HashMap<String, Integer> must be one of the keys in HashMap<String, HashMap<String, Integer>>
+	 * The Integer in the HashMap<String, Integer> must be non-negative
+	 * startNode must be one of the keys in HashMap<String, HashMap<String, Integer>>
+	 * 
+	 * 
+	 * Abstraction Function
+	 * 
+	 * 
+	 * 
+	 */
+	
 	public HashMap<String,String> path;
 	public HashMap<String,Vertex> vertices;
 	
@@ -48,6 +62,7 @@ public class Dijkstra {
 		// Repeat the process until all the connected nodes are visited.
 		
 		source.minDistance = 0;
+		
 		PriorityQueue<Vertex> queue = new PriorityQueue<Vertex>();
 		queue.add(source);
 		
@@ -64,6 +79,7 @@ public class Dijkstra {
 					neighbor.target.minDistance = newDist;
 					
 					// Take the path visited till now and add the new node.
+					
 					neighbor.target.path = new LinkedList<Vertex>(u.path);
 					neighbor.target.path.add(u);
 					
