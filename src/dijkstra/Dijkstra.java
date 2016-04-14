@@ -15,9 +15,8 @@ public class Dijkstra {
 	 * 
 	 * 
 	 * Abstraction Function
-	 * 
-	 * 
-	 * 
+	 * The input is represented as a hashMap of Strings to a HashMap of Strings to Integers, but concretely it is ArrayLists of Nodes and Edges
+	 * The output is represented as a hashMap of Strings to Strings, but concretely it is a Priority Queue
 	 */
 	
 	public HashMap<String,String> path;
